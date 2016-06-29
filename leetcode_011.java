@@ -1,6 +1,6 @@
 package cn.cc.org;
 
-public class leetcode_11 {
+public class leetcode_011 {
 	public int maxArea(int[] height) {
 
         // 参数校验
