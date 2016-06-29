@@ -4,26 +4,26 @@ import java.util.Arrays;
 
 public class leetcode_10 {
 	public boolean isMatch(String s, String p) {
-        // ±Íº« ˝ ˝◊È
+        // Ê†áËÆ∞Êï∞Êï∞ÁªÑ
         boolean[] match = new boolean[s.length() + 1];
-        // ≥ı ºªØ
+        // ÂàùÂßãÂåñ
         Arrays.fill(match, false);
-        // ºŸ∂®◊Ó∫ÛµƒΩ·π˚ «∆•≈‰µƒ
+        // ÂÅáÂÆöÊúÄÂêéÁöÑÁªìÊûúÊòØÂåπÈÖçÁöÑ
         match[s.length()] = true;
 
-        // ∂‘ƒ£ Ω¥Æ¥”∫ÛœÚ«∞Ω¯––¥¶¿Ì
+        // ÂØπÊ®°Âºè‰∏≤‰ªéÂêéÂêëÂâçËøõË°åÂ§ÑÁêÜ
         for (int i = p.length() - 1; i >= 0; i--) {
 
-            // »Áπ˚µ±«∞ «*
+            // Â¶ÇÊûúÂΩìÂâçÊòØ*
             if (p.charAt(i) == '*') {
 
-                // ∆•≈‰¥Æ¥”◊Ó∫Û“ª∏ˆø™ º¥¶¿Ì
+                // ÂåπÈÖç‰∏≤‰ªéÊúÄÂêé‰∏Ä‰∏™ÂºÄÂßãÂ§ÑÁêÜ
                 for (int j = s.length() - 1; j >= 0; j--)  {
                     match[j] = match[j] || match[j + 1] && (p.charAt(i - 1) == '.' || s.charAt(j) == p.charAt(i - 1));
                 }
                 i--;
             }
-            // »Áπ˚≤ª «*
+            // Â¶ÇÊûú‰∏çÊòØ*
             else {
                 for (int j = 0; j < s.length(); j++) {
                     match[j] = match[j + 1] && (p.charAt(i) == '.' || p.charAt(i) == s.charAt(j));
