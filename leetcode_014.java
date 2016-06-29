@@ -1,6 +1,6 @@
 package cn.cc.org;
 
-public class leetcode_14 {
+public class leetcode_014 {
 	public String longestCommonPrefix(String[] strs) {
         if (strs == null) {
             return null;
@@ -10,9 +10,9 @@ public class leetcode_14 {
             return "";
         }
 
-        int min = Integer.MAX_VALUE;  // ��¼��̵��ַ����ĳ���
+        int min = Integer.MAX_VALUE;  // 记录最短的字符串的长度
 
-        // �Ҷ��ַ����ĳ���
+        // 找短字符串的长度
         for (String str : strs) {
 
             if (str == null) {
@@ -24,7 +24,7 @@ public class leetcode_14 {
             }
         }
 
-        int i; // ��¼�ǰ׺���ַ���
+        int i; // 记录最长前缀的字符数
         boolean flag;
         for (i = 0; i < min; i++) {
             flag = true;
