@@ -3,7 +3,7 @@ package cn.cc.org;
 import java.util.Arrays;
 
 
-public class leetcode_1 {
+public class leetcode_001 {
     private static class Node {
         int val; // 值
         int idx; // 值对应的数组下标
