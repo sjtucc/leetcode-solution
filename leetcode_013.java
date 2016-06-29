@@ -1,10 +1,10 @@
 package cn.cc.org;
 
-public class leetcode_13 {
+public class leetcode_013 {
 	public int romanToInt(String s) {
 
         int result = 0;
-        int prev = 0; // ��¼ǰһ�����ֵ�ֵ
+        int prev = 0; // ¼ÇÂ¼Ç°Ò»¸öÊý×ÖµÄÖµ
 
         for (int i = s.length() - 1; i > -1; i--) {
             switch (s.charAt(i)) {
