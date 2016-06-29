@@ -9,7 +9,7 @@ class ListNode {
 	
 }
 
-public class leetcode_2 {
+public class leetcode_002 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
