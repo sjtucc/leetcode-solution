@@ -3,43 +3,43 @@ package cn.cc.org;
 public class leetcode_11 {
 	public int maxArea(int[] height) {
 
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (height == null || height.length < 2) {
             return 0;
         }
 
 
-        // ¼ÇÂ¼×î´óµÄ½á¹û
+        // è®°å½•æœ€å¤§çš„ç»“æœ
         int result = 0;
 
-        // ×ó±ßµÄÊúÏß
+        // å·¦è¾¹çš„ç«–çº¿
         int left = 0;
-        // ÓÒ±ßµÄÊúÏß
+        // å³è¾¹çš„ç«–çº¿
         int right = height.length - 1;
 
         while (left < right) {
-            // ÉèËãµ±Ç°µÄ×î´óÖµ
+            // è®¾ç®—å½“å‰çš„æœ€å¤§å€¼
             result = Math.max(result, Math.min(height[left], height[right]) * (right - left));
-            // Èç¹ûÓÒ±ßÏß¸ß
+            // å¦‚æœå³è¾¹çº¿é«˜
             if (height[left] < height[right]) {
                 int k = left;
-                // ´Ó[left, right - 1]ÖĞ£¬´Ó×óÏòÓÒÕÒ£¬ÕÒµÚÒ»¸ö¸ß¶È±Èheight[left]¸ßµÄÎ»ÖÃ
+                // ä»[left, right - 1]ä¸­ï¼Œä»å·¦å‘å³æ‰¾ï¼Œæ‰¾ç¬¬ä¸€ä¸ªé«˜åº¦æ¯”height[left]é«˜çš„ä½ç½®
                 while (k < right && height[k] <= height[left]) {
                     k++;
                 }
 
-                // ´Ó[left, right - 1]ÖĞ£¬¼ÇÂ¼µÚÒ»¸ö±ÈÔ­À´height[left]¸ßµÄÎ»ÖÃ
+                // ä»[left, right - 1]ä¸­ï¼Œè®°å½•ç¬¬ä¸€ä¸ªæ¯”åŸæ¥height[left]é«˜çš„ä½ç½®
                 left = k;
             }
-            // ×ó±ßµÄÏß¸ß
+            // å·¦è¾¹çš„çº¿é«˜
             else {
                 int k = right;
-                // ´Ó[left + 1, right]ÖĞ£¬´ÓÓÒÏò×óÕÒ£¬ÕÒµÚÒ»¸ö¸ß¶È±Èheight[right]¸ßµÄÎ»ÖÃ
+                // ä»[left + 1, right]ä¸­ï¼Œä»å³å‘å·¦æ‰¾ï¼Œæ‰¾ç¬¬ä¸€ä¸ªé«˜åº¦æ¯”height[right]é«˜çš„ä½ç½®
                 while (k > left && height[k] <= height[right]) {
                     k--;
                 }
 
-                // ´Ó[left, right - 1]ÖĞ£¬¼ÇÂ¼µÚÒ»¸ö±ÈÔ­À´height[right]¸ßµÄÎ»ÖÃ
+                // ä»[left, right - 1]ä¸­ï¼Œè®°å½•ç¬¬ä¸€ä¸ªæ¯”åŸæ¥height[right]é«˜çš„ä½ç½®
                 right = k;
             }
         }
