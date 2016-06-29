@@ -2,7 +2,7 @@ package cn.cc.org;
 
 import java.util.Arrays;
 
-public class leetcode_10 {
+public class leetcode_010 {
 	public boolean isMatch(String s, String p) {
         // 标记数数组
         boolean[] match = new boolean[s.length() + 1];
