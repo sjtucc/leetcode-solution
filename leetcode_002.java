@@ -23,19 +23,19 @@ public class leetcode_2 {
 
         ListNode p1 = l1;
         ListNode p2 = l2;
-        ListNode root = new ListNode(0); // Í·½áµã
+        ListNode root = new ListNode(0); // å¤´ç»“ç‚¹
         ListNode r = root;
         root.next = l1;
 
-        int carry = 0; // ³õÊ¼½øÎ»
+        int carry = 0; // åˆå§‹è¿›ä½
         int sum;
         while (p1 != null && p2 != null) {
             sum = p1.val + p2.val + carry;
-            p1.val = sum % 10; // ±¾Î»µÄ½á¹û
-            carry = sum / 10; // ±¾´Î½øÎ»
+            p1.val = sum % 10; // æœ¬ä½çš„ç»“æœ
+            carry = sum / 10; // æœ¬æ¬¡è¿›ä½
 
             r.next = p1;
-            r = p1; // Ö¸Ïò×îºóÒ»¸öÏà¼ÓµÄ½áµã
+            r = p1; // æŒ‡å‘æœ€åä¸€ä¸ªç›¸åŠ çš„ç»“ç‚¹
             p1 = p1.next;
             p2 = p2.next;
 
@@ -47,9 +47,9 @@ public class leetcode_2 {
             r.next = p1;
         }
 
-        // ×îºóÒ»´ÎÏà¼Ó»¹ÓĞ½øÎ»
+        // æœ€åä¸€æ¬¡ç›¸åŠ è¿˜æœ‰è¿›ä½
         if (carry == 1) {
-            // ¿ªÊ¼Ê±r.nextÊÇµÚÒ»¸öÒªÏà¼ÓµÄ½áµã
+            // å¼€å§‹æ—¶r.nextæ˜¯ç¬¬ä¸€ä¸ªè¦ç›¸åŠ çš„ç»“ç‚¹
             while (r.next != null) {
                 sum = r.next.val + carry;
                 r.next.val = sum % 10;
@@ -57,7 +57,7 @@ public class leetcode_2 {
                 r = r.next;
             }
 
-            // ¶¼¼ÓÍêÁË»¹ÓĞ½øÎ»£¬¾ÍÒª´´½¨Ò»¸öĞÂµÄ½áµã
+            // éƒ½åŠ å®Œäº†è¿˜æœ‰è¿›ä½ï¼Œå°±è¦åˆ›å»ºä¸€ä¸ªæ–°çš„ç»“ç‚¹
             if (carry == 1) {
                 r.next = new ListNode(1);
             }
