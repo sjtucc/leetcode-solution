@@ -3,15 +3,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-public class leetcode_15 {
+public class leetcode_015 {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
-        HashSet hs = new HashSet(); //×îºó²»»áÓĞÖØ¸´
+        HashSet hs = new HashSet(); //æœ€åä¸ä¼šæœ‰é‡å¤
 
         for(int i=0; i<nums.length; i++) {
 
-            int left = i + 1;  //×î¹Ø¼üµÄµØ·½£¬Èç¹ûÊÇÏë°ì·¨È¥µô¶¨µãºóleft=0,»áÖØ¸´¼ÆËã
+            int left = i + 1;  //æœ€å…³é”®çš„åœ°æ–¹ï¼Œå¦‚æœæ˜¯æƒ³åŠæ³•å»æ‰å®šç‚¹åleft=0,ä¼šé‡å¤è®¡ç®—
             int right = nums.length-1;
             while(left < right) {
                 if(nums[left] + nums[right] > -nums[i]) {
@@ -26,7 +26,7 @@ public class leetcode_15 {
                     li.add(nums[left]);
                     li.add(nums[right]);
                     hs.add(li);
-                    //break;   //ÒÔÃ¿¸öÎª¶¨µã£¬´ğ°¸¿ÉÄÜÓĞ¶à¸ö
+                    //break;   //ä»¥æ¯ä¸ªä¸ºå®šç‚¹ï¼Œç­”æ¡ˆå¯èƒ½æœ‰å¤šä¸ª
                     left++;    
                     right--;
                 }
