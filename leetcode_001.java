@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class leetcode_1 {
     private static class Node {
-        int val; // Öµ
-        int idx; // Öµ¶ÔÓ¦µÄÊı×éÏÂ±ê
+        int val; // å€¼
+        int idx; // å€¼å¯¹åº”çš„æ•°ç»„ä¸‹æ ‡
 
         public Node() {
         }
@@ -16,7 +16,7 @@ public class leetcode_1 {
             this.idx = idx;
         }
 
-        // ±È½Ï·½·¨
+        // æ¯”è¾ƒæ–¹æ³•
         public int compareTo(Node o) {
             if (o == null) {
                 return -1;
@@ -25,26 +25,26 @@ public class leetcode_1 {
         }
     }
 	 public int[] twoSum(int[] nums, int target) {
-	        // ÓÃÓÚ±£´æ·µ»Ø½á¹û
+	        // ç”¨äºä¿å­˜è¿”å›ç»“æœ
 	        int[] result = {0, 0};
 
-	        // ´´½¨¸¨ÖúÊı×é
+	        // åˆ›å»ºè¾…åŠ©æ•°ç»„
 	        Node[] tmp = new Node[nums.length];
 	        for (int i = 0; i < nums.length; i++) {
 	            tmp[i] = new Node(nums[i], i);
 	        }
 
-	        // ¶Ô¸¨ÖúÊı×é½øĞĞÅÅĞò
+	        // å¯¹è¾…åŠ©æ•°ç»„è¿›è¡Œæ’åº
 	        Arrays.sort(tmp);
 
-	        // ¼ÇÂ¼¸¨ÖúÊı×éÖĞ×ó±ßÒ»¸öÖµµÄÏÂ±ê
+	        // è®°å½•è¾…åŠ©æ•°ç»„ä¸­å·¦è¾¹ä¸€ä¸ªå€¼çš„ä¸‹æ ‡
 	        int lo = 0;
-	        // ¼ÇÂ¼¸¨ÖúÊı×éÖĞÓÒ±ßÒ»¸öÖµµÄÏÂ±ê
+	        // è®°å½•è¾…åŠ©æ•°ç»„ä¸­å³è¾¹ä¸€ä¸ªå€¼çš„ä¸‹æ ‡
 	        int hi = nums.length - 1;
 
-	        // ´ÓÁ½±ßÏòÖĞ¼ä¿¿Â¤½øĞĞÇó½â
+	        // ä»ä¸¤è¾¹å‘ä¸­é—´é é™‡è¿›è¡Œæ±‚è§£
 	        while (lo < hi) {
-	            // Èç¹ûÕÒµ½½á¹û¾ÍÉèÖÃ·µ»Ø½á¹û£¬²¢ÇÒÍË³öÑ­»·
+	            // å¦‚æœæ‰¾åˆ°ç»“æœå°±è®¾ç½®è¿”å›ç»“æœï¼Œå¹¶ä¸”é€€å‡ºå¾ªç¯
 	            if (tmp[lo].val + tmp[hi].val == target) {
 
 	                if (tmp[lo].idx > tmp[hi].idx) {
@@ -56,11 +56,11 @@ public class leetcode_1 {
 	                }
 	                break;
 	            }
-	            // Èç¹û´óÓÚÄ¿±êÖµ£¬ÓÒ±ßµÄÏÂ±êÏò×óÒÆ¶¯
+	            // å¦‚æœå¤§äºç›®æ ‡å€¼ï¼Œå³è¾¹çš„ä¸‹æ ‡å‘å·¦ç§»åŠ¨
 	            else if (tmp[lo].val + tmp[hi].val > target) {
 	                hi--;
 	            }
-	            // Èç¹ûĞ¡ÓÚÄ¿±êÖµ£¬×ó±ßµÄÏÂ±êÏòÓÒÒÆ¶¯
+	            // å¦‚æœå°äºç›®æ ‡å€¼ï¼Œå·¦è¾¹çš„ä¸‹æ ‡å‘å³ç§»åŠ¨
 	            else {
 	                lo++;
 	            }
